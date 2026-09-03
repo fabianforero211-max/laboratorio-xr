@@ -1,9 +1,44 @@
-<!-- Una base/mesa industrial -->
-<a-box position="0 0.5 -4" width="4" height="0.1" depth="2" color="#707070"></a-box>
-<!-- Rodillos de la banda (cilindros) -->
-<a-cylinder position="-1.5 0.6 -4" radius="0.05" height="2" rotation="90 0 0" color="#333"></a-cylinder>
-<a-cylinder position="-0.5 0.6 -4" radius="0.05" height="2" rotation="90 0 0" color="#333"></a-cylinder>
-<a-cylinder position="0.5 0.6 -4" radius="0.05" height="2" rotation="90 0 0" color="#333"></a-cylinder>
-<a-cylinder position="1.5 0.6 -4" radius="0.05" height="2" rotation="90 0 0" color="#333"></a-cylinder>
-<!-- Una caja de producto sobre la banda -->
-<a-box position="0 0.8 -4" width="0.5" height="0.5" depth="0.5" color="#D2B48C"></a-box>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laboratorio XR - Fabian Forero</title>
+    <!-- El script es el motor, si falta, no se ve nada -->
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Cielo -->
+      <a-sky color="#87CEEB"></a-sky>
+      
+      <!-- Suelo de la fabrica -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
+
+      <!-- ESTRUCTURA INDUSTRIAL (Fase 3) -->
+      
+      <!-- Mesa de la banda -->
+      <a-box position="0 0.5 -4" width="4" height="0.1" depth="1.5" color="#555"></a-box>
+      
+      <!-- Patas de la mesa -->
+      <a-cylinder position="-1.8 0.25 -3.5" radius="0.05" height="0.5" color="#333"></a-cylinder>
+      <a-cylinder position="1.8 0.25 -3.5" radius="0.05" height="0.5" color="#333"></a-cylinder>
+      <a-cylinder position="-1.8 0.25 -4.5" radius="0.05" height="0.5" color="#333"></a-cylinder>
+      <a-cylinder position="1.8 0.25 -4.5" radius="0.05" height="0.5" color="#333"></a-cylinder>
+
+      <!-- Rodillos de la banda -->
+      <a-cylinder position="-1.5 0.6 -4" radius="0.05" height="1.5" rotation="90 0 0" color="#222"></a-cylinder>
+      <a-cylinder position="-0.5 0.6 -4" radius="0.05" height="1.5" rotation="90 0 0" color="#222"></a-cylinder>
+      <a-cylinder position="0.5 0.6 -4" radius="0.05" height="1.5" rotation="90 0 0" color="#222"></a-cylinder>
+      <a-cylinder position="1.5 0.6 -4" radius="0.05" height="1.5" rotation="90 0 0" color="#222"></a-cylinder>
+
+      <!-- Producto (Caja) -->
+      <a-box position="0 0.8 -4" width="0.5" height="0.5" depth="0.5" color="#D2B48C"></a-box>
+
+      <!-- Panel de Control -->
+      <a-box position="-2.5 1 -4" width="0.2" height="0.8" depth="0.5" color="#333">
+          <a-sphere position="0.15 0.2 0" radius="0.05" color="red"></a-sphere>
+          <a-sphere position="0.15 0 0" radius="0.05" color="green"></a-sphere>
+      </a-box>
+
+    </a-scene>
+  </body>
+</html>
