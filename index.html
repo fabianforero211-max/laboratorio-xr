@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Esto carga la "librería" para que el navegador entienda el 3D -->
-    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
-  </head>
-  <body>
-    <!-- Todo lo que esté dentro de a-scene será parte del mundo 3D -->
-    <a-scene>
-      <!-- Un cubo azul (box) -->
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <!-- Una esfera roja (sphere) -->
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <!-- Un cilindro amarillo (cylinder) -->
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <!-- El suelo verde (plane) -->
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <!-- El color del cielo -->
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
-  </body>
-</html>
+<!-- Una base/mesa industrial -->
+<a-box position="0 0.5 -4" width="4" height="0.1" depth="2" color="#707070"></a-box>
+<!-- Rodillos de la banda (cilindros) -->
+<a-cylinder position="-1.5 0.6 -4" radius="0.05" height="2" rotation="90 0 0" color="#333"></a-cylinder>
+<a-cylinder position="-0.5 0.6 -4" radius="0.05" height="2" rotation="90 0 0" color="#333"></a-cylinder>
+<a-cylinder position="0.5 0.6 -4" radius="0.05" height="2" rotation="90 0 0" color="#333"></a-cylinder>
+<a-cylinder position="1.5 0.6 -4" radius="0.05" height="2" rotation="90 0 0" color="#333"></a-cylinder>
+<!-- Una caja de producto sobre la banda -->
+<a-box position="0 0.8 -4" width="0.5" height="0.5" depth="0.5" color="#D2B48C"></a-box>
