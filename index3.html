@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Esto carga la "librería" para que el navegador entienda el 3D -->
+    <meta charset="utf-8">
+    <title>Laboratorio XR - Cinta Transportadora</title>
+    <!-- Cargamos la librería de A-Frame -->
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
   </head>
   <body>
-    <!-- Todo lo que esté dentro de a-scene será parte del mundo 3D -->
+    <!-- Iniciamos la escena 3D -->
     <a-scene>
-      <!-- Un cubo azul (box) -->
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <!-- Una esfera roja (sphere) -->
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <!-- Un cilindro amarillo (cylinder) -->
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <!-- El suelo verde (plane) -->
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <!-- El color del cielo -->
-      <a-sky color="#ECECEC"></a-sky>
+      
+      <!-- 1. PRECARGA DEL MODELO -->
+      <a-assets>
+        <!-- Importante: El nombre en src debe ser idéntico al archivo que subiste a GitHub -->
+        <a-asset-item id="cinta" src="Cintatransportadora.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- 2. ENTORNO BÁSICO -->
+      <!-- Color del cielo (celeste claro) -->
+      <a-sky color="#87CEEB"></a-sky>
+      <!-- Suelo (piso gris tipo industrial) -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#808080"></a-plane>
+
+      <!-- 3. TU MODELO DE SOLIDWORKS -->
+      <a-entity 
+        gltf-model="#cinta" 
+        position="0 1 -3" 
+        scale="1 1 1" 
+        rotation="0 0 0">
+      </a-entity>
+
+      <!-- 4. LUCES (Para que el modelo se vea bien) -->
+      <a-entity light="type: ambient; intensity: 0.7"></a-entity>
+      <a-entity light="type: directional; intensity: 0.6" position="-1 2 1"></a-entity>
+
     </a-scene>
   </body>
 </html>
