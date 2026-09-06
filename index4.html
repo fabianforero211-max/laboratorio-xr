@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Esto carga la "librería" para que el navegador entienda el 3D -->
+    <meta charset="utf-8">
+    <title>Laboratorio XR - Final</title>
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
   </head>
   <body>
-    <!-- Todo lo que esté dentro de a-scene será parte del mundo 3D -->
-    <a-scene>
-      <!-- Un cubo azul (box) -->
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <!-- Una esfera roja (sphere) -->
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <!-- Un cilindro amarillo (cylinder) -->
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <!-- El suelo verde (plane) -->
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <!-- El color del cielo -->
-      <a-sky color="#ECECEC"></a-sky>
+    <!-- BOTÓN DE EMERGENCIA PARA FORZAR VR -->
+    <button id="forceVR" style="position: fixed; top: 20px; left: 20px; z-index: 9999; padding: 15px; background: #ff0000; color: white; border: none; border-radius: 5px; font-weight: bold;">
+      ENTRAR EN MODO VR (FOTO AQUÍ)
+    </button>
+
+    <a-scene vr-mode-ui="enabled: true">
+      <a-assets>
+        <a-asset-item id="cinta" src="Cintatransportadora.glb"></a-asset-item>
+      </a-assets>
+
+      <a-sky color="#87CEEB"></a-sky>
+      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#808080"></a-plane>
+
+      <a-entity gltf-model="#cinta" position="0 0 -5" scale="1 1 1"></a-entity>
+      <a-entity light="type: ambient; intensity: 0.7"></a-entity>
+      <a-entity light="type: directional; intensity: 0.6" position="-1 2 1"></a-entity>
     </a-scene>
+
+    <script>
+      // Este pequeño código obliga a la página a entrar en VR al tocar el botón rojo
+      document.getElementById('forceVR').addEventListener('click', function () {
+        document.querySelector('a-scene').enterVR();
+      });
+    </script>
   </body>
 </html>
